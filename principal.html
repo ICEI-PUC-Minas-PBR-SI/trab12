@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head lang="pt-br">
+  <title>BloodBridge</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="img/cruz-vermelha-removebg-preview.png">
+  <link rel="stylesheet" href="principal.css">
+  <script src="principal.js"></script>
+</head>
+
+<body>
+  <div class="geral0">
+    <input type="button" value="Voltar" class="voltar">
+    <img src="img/cruz-vermelha-removebg-preview.png" alt="Foto de Perfil" class="fotoperfil">
+    <h1 class="titulogeral0">BloodBridge</h1>
+    <a href="login.html"><input type="button" class="sairconta" value="Sair da conta"></a>
+  </div>
+  <header>
+    <nav class="menu">
+      <ul>
+        <li><a href="curiosidades.html" class="men">Notificações</a></li><br>
+        <li><a href="perfil.html" class="men">Perfil</a></li><br>
+        <li><a href="interacoes.html" class="men">Interações</a></li><br>
+        <li><a href="solicitacoes.html" class="men">Solicitações</a></li><br>
+        <li><a href="historico.html" class="men">Histórico</a></li><br>
+        <li><a href="calendario.html" class="men">Calendário</a></li><br>
+        <li><a href="dicas.html" class="men">Dicas</a></li><br>
+      </ul>
+    </nav>
+    <main>
+      <div class="sobre">
+        <!--<h3 class="sobretitulo">Espaço Destinado ao Mapa Interativo</h3><br>-->
+        <div id="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d155954.5459577989!2d-122.4194155!3d37.7749295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7e5f1f8a30d3%3A0x17b3ee3f4b2a1a41!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sca!4v1568813846765!5m2!1sen!2sca"
+            width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="geral1">
+        <h3 style="margin-top: 15px;">Usuários</h3>
+        <div>
+          <p style="text-align: center; margin-top: 20px;">Filtros<br></p>
+          -----------------------------------------
+        </div>
+      </div>
+
+      <!-- Formulário de Registro de Notícias -->
+      <div class="registro-noticia">
+        <h3>Registrar Nova Notícia</h3>
+        <form onsubmit="salvarNoticia(event)">
+          <label for="identificacao">Identificação:</label>
+          <input type="text" id="identificacao" name="identificacao" required><br><br>
+          <label for="titulo">Título:</label>
+          <input type="text" id="titulo" name="titulo" required><br><br>
+          <label for="conteudo">Conteúdo:</label>
+          <textarea id="conteudo" name="conteudo" required></textarea><br><br>
+          <label for="autor">Nome do Autor:</label>
+          <input type="text" id="autor" name="autor" required><br><br>
+          <input type="submit" value="Registrar Notícia">
+        </form>
+      </div>
+
+      <!-- Elemento para exibir as notícias cadastradas -->
+      <div id="noticias">
+        <h3>Notícias Cadastradas</h3>
+      </div>
+
+    </main>
+  </header>
+
+  <script>
+    // Função para salvar a notícia no Local Storage
+    function salvarNoticia(event) {
+      event.preventDefault();
+
+      // Obtenha os dados da notícia a partir do formulário
+      var id = document.getElementById('identificacao').value;
+      var titulo = document.getElementById('titulo').value;
+      var conteudo = document.getElementById('conteudo').value;
+      var autor = document.getElementById('autor').value;
+
+      // Crie um objeto para representar a notícia
+      var noticia = {
+        id: id,
+        titulo: titulo,
+        conteudo: conteudo,
+        autor: autor
+      };
+
+      // Recupere as notícias já cadastradas do Local Storage
+      var noticiasCadastradas = localStorage.getItem('noticias');
+      var noticias = [];
+
+      if (noticiasCadastradas) {
+        noticias = JSON.parse(noticiasCadastradas);
+      }
+
+      // Adicione a nova notícia à lista
+      noticias.push(noticia);
+
+      // Converta a lista de notícias de volta para uma string JSON
+      var noticiasJSON = JSON.stringify(noticias);
+
+      // Salve a lista de notícias atualizada no Local Storage
+      localStorage.setItem('noticias', noticiasJSON);
+
+      // Exiba uma mensagem de sucesso
+      alert('Notícia salva com sucesso!');
+
+      // Limpe o formulário
+      document.getElementById('identificacao').value = '';
+      document.getElementById('titulo').value = '';
+      document.getElementById('conteudo').value = '';
+      document.getElementById('autor').value = '';
+
+      // Atualize a exibição das notícias
+      exibirNoticias();
+    }
+
+    // Função para exibir as notícias cadastradas
+    function exibirNoticias() {
+      // Recupere as notícias do Local Storage
+      var noticiasCadastradas = localStorage.getItem('noticias');
+      var noticias = [];
+
+      if (noticiasCadastradas) {
+        noticias = JSON.parse(noticiasCadastradas);
+      }
+
+      // Obtenha o elemento onde as notícias serão exibidas
+      var noticiasContainer = document.getElementById('noticias');
+      noticiasContainer.innerHTML = ''; // Limpe o conteúdo atual
+
+      // Crie elementos HTML para cada notícia e adicione ao container
+      noticias.forEach(function(noticia) {
+        var noticiaElement = document.createElement('div');
+        noticiaElement.innerHTML = '<h4>' + noticia.titulo + '</h4>' +
+          '<p>' + noticia.conteudo + '</p>' +
+          '<p>Autor: ' + noticia.autor + '</p>';
+        noticiasContainer.appendChild(noticiaElement);
+      });
+    }
+
+    // Chame a função de recuperação ao carregar a página
+    window.onload = function() {
+      recuperarNoticia();
+      exibirNoticias();
+    };
+  </script>
+</body>
+
+</html>

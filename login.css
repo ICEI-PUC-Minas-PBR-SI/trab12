@@ -1,0 +1,69 @@
+body {
+    background-color: white !important;
+}
+
+#cabecalho {
+    background-color: #999 !important;
+}
+
+#Titulo {
+    color: black;
+    font-size: 30px;
+}
+
+#btn_entrar {
+    border-color: red;
+    color: white;
+    background-color: red;
+    margin: 3px;
+    margin-top: 10px;
+    margin-right: 3px;
+    display: inline-block;
+    float: left;
+}
+
+#btn_nusuario {
+    border-color: red;
+    color: white;
+    background-color: red;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 5px;
+    display: inline-block;
+    float: right;
+}
+
+#btn_salvar {
+    border-color: red;
+    color: white;
+    background-color: red;
+    margin: 3px;
+}
+
+#btn_cancelar {
+    border-color: red;
+    color: white;
+    background-color: red;
+    margin: 3px;
+}
+
+#username {
+    margin-bottom: 20px;
+}
+
+#password {
+    margin-bottom: 20px;
+}
+
+.modal-body {
+    background-color: #999;
+}
+
+.modal-header {
+    background-color: #999;
+}
+
+.modal-footer {
+    background-color: #999 !important;
+}
+

@@ -1,0 +1,229 @@
+html {
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-color: black;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  p {
+    text-align: justify;
+    color: white;
+    text-indent: 20px;
+  
+  }
+  
+  body {
+    color: white;
+  
+  }
+  
+  main {
+    background-color: black;
+    width: 100%;
+    max-width: 800px;
+    padding: 5px 40px;
+    margin-top: 20px;
+    margin: auto;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .geral0 {
+    border-style: solid;
+    border-color: crimson;
+    background-color: #444;
+    display: block;
+  }
+  
+  .band-name,
+  .headline {
+    margin: 0;
+    text-align: center;
+  
+  }
+  
+  .logo {
+    display: block;
+    margin: 0;
+    text-align: center;
+  
+  }
+  
+  .concerts {
+    margin: 30px 0;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .concerts table {
+    background: #cb3a3ab3;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 auto;
+  }
+  
+  ul {
+    color: white;
+  }
+  
+  header .menu {
+    position: absolute;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+  }
+  
+  header {
+    width: 100%;
+    height: 100vh;
+  
+  }
+  
+  header .menu li {
+    display: inline-block;
+  
+  }
+  
+  header .menu a {
+    color: white;
+    padding: 8px 12px;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  header .menu .ativo,
+  header .menu a:hover {
+    color: white;
+    background-color: red;
+    border-radius: 3px;
+    transition: 200ms;
+  }
+  
+  .men {
+    display: block;
+    justify-content: space-between;
+    background-color: #444;
+    width: 100%;
+    max-width: 800px;
+    padding: 5px 40px;
+    margin-top: 20px;
+    margin: auto;
+    border-radius: 10px;
+  }
+  
+  .menu {
+    color: white;
+    background-color: #444;
+    width: 20%;
+    height: 500px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 260px;
+    border-radius: 10px;
+    position: absolute;
+    margin-top: 15px;
+  }
+  
+  .fotinha {
+    width: 300px;
+  }
+  
+  .sobretitulo {
+    text-align: center;
+    font-size: 32px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .sobre {
+    color: white;
+    text-align: justify;
+    font-size: 16px;
+    width: 100%;
+    border-style: solid;
+    border-color: red;
+    border-radius: 12px;
+    display: inline-table;
+    height: 400px;
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+  }
+  
+  .voltar {
+    position: absolute;
+    margin: 5px;
+    margin-left: 5px;
+    background-color: red;
+    border-style: solid;
+    padding: 8px;
+    font-size: 12px;
+    color: white;
+    border-radius: 10px;
+    transition: 200ms;
+  }
+  
+  .sairconta {
+    display: inline-block;
+    background-color: red;
+    margin-right: 10px;
+    margin-top: 150px;
+    border-style: solid;
+    margin-left: 1300px;
+    padding: 12px;
+    font-size: 16px;
+    color: white;
+    border-radius: 10px;
+    transition: 200ms;
+    position: absolute;
+  }
+  
+  .titulogeral0 {
+    display: inline;
+    color: white;
+    margin-left: 480px;
+    position: absolute;
+    margin-top: 120px;
+    font-size: 64px;
+  }
+  
+  .fotoperfil {
+    color: white;
+    text-align: center;
+    font-size: 42px;
+    border-radius: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 200px;
+    margin: 30px;
+    border-width: 5px;
+    display: inline-block;
+  }
+  
+  .geral1 {
+    color: white;
+    border-color: forestgreen;
+    background-color: #444;
+    width: 20%;
+    display: inline-table;
+    height: 500px;
+    text-align: center;
+    margin-left: 260px;
+    margin-right: 10px;
+    border-radius: 10px;
+    position: absolute;
+    margin-top: 15px;
+  }

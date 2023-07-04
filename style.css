@@ -1,0 +1,47 @@
+/* Estilos para o formulário de registro de notícias */
+.registro-noticia {
+    margin-left: 12px;
+    margin-top: 15px;
+    width: 90%;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #444;
+    border-radius: 5px;
+  }
+  
+  .registro-noticia h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .registro-noticia label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .registro-noticia input[type="text"],
+  .registro-noticia textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  
+  .registro-noticia input[type="submit"] {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  .registro-noticia input[type="submit"]:hover {
+    background-color: #45a049;
+  }
